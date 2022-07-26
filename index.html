@@ -1,20 +1,18 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset='UTF-8'>
-	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link rel='stylesheet' href='style.css'>
-	<link rel='stylesheet' href='jScript.js'>
+	<script src="JavaSc.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div id="myDIV" class="header">
 		<h1>My To Do List</h1>
 		<input type="text" id="myInput" placeholder="Insert your ToDo">
-		<span onclick="add()">Add</span>
-	</div>
-	  <ul id="myUL">
-		<li class><span onclick="remove()">Remove</span></li>
-	  </ul>
+		<button id='new' onclick="add()">Add</button>
+	  <p id='par'></p><button id='rem' onclick="remove()">Remove</button>
+	  
 </body>
 </html>
