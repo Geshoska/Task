@@ -21,18 +21,42 @@ form{
 	background:#fff;
 	box-shadow:-3px 6px 4px #222;
 }
+button {
+	border: none;
+	width:60px;
+	height:35px;
+	text-align: center;
+	font-size: 17px;
+	margin-left: 52%;
+	transition-duration: 0.4s;
+	cursor: pointer;
+  }
+button:hover {
+	background-color: #57bae7d8;
+	color: white;
+  }
+  
 input{
-	width:250px;
+	width:60%;
 	height:40px;
-	border:none;
-	outline:none;
+	border: none;
+	border-radius: 10px;
 	padding:0 5px;
+	font-size: 18px;
+	border: none;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 4px 2px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	background-color: white; 
 	
 }
-span{
+p{
 	width:60px;
 	float: right;
-	height:40px;
+	height:40%;
 	background:rgb(103, 170, 249);
 	color:white;
 	outline:none;
@@ -40,12 +64,12 @@ span{
 	cursor:pointer;
 	font-size:18px;
 }
-ul{
+p{
 	list-style:none;
 	width:500px;
 }
-ul li{
-	width:100%;
+p{
+	width:60%;
 	background:#fff;
 	height:40px;
 	line-height:40px;
@@ -57,21 +81,27 @@ ul li{
 	box-shadow: -2px 4px 2px #200;
 	border-radius: 10px 10px 10px 10px;
 }
-li{
-	width:100%;
+p{
+	width:60%;
 	height:40px;
 	background:#fff;
 	line-height:40px;
 
 }
-ul li span{
+p button{
 	 position:absolute;
 	 top:0;
 	 right:0;
 	 width:70px;
 	 text-align:center;
 	 background:rgb(103, 170, 249);
-	 font-size:18px;
+	 font-size: 18px;
 	 font-style:italic;
 	 border-radius: 10px 10px 10px 10px;
+}
+p input{
+	width: 60%;
+	height: 40%;
+	text-align: center;
+	font-size: 18px;
 }
