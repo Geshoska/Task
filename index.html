@@ -9,10 +9,16 @@
 	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
 </head>
 <body>
-		<h1>My To Do List</h1>
-		<input type="text" id="myInput" placeholder="Insert your ToDo">
-		<button id='new' onclick="add()">Add</button>
-	  <p id='par'></p><button id='rem' onclick="remove()">Remove</button>
-	  
+<h1>My To Do List</h1>
+	<input type="text" id="myInput" placeholder="Insert your ToDo"></body>
+	<button id='new' onclick="add()">Add</button>
+	<ul id='ul'>
+		<li>
+			<label>
+				<span onclick='strike()' id="span"></span>
+			</label>
+		</li>
+	</ul><button id='rem' onclick="remove()">Remove</button>
+	
 </body>
 </html>

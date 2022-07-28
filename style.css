@@ -27,22 +27,24 @@ button {
 	height:35px;
 	text-align: center;
 	font-size: 17px;
-	margin-left: 52%;
+	margin-left: 600px;
 	transition-duration: 0.4s;
 	cursor: pointer;
   }
+
+
 button:hover {
 	background-color: #57bae7d8;
 	color: white;
   }
   
 input{
-	width:60%;
+	width:50%;
 	height:40px;
 	border: none;
 	border-radius: 10px;
 	padding:0 5px;
-	font-size: 18px;
+	font-size: 19px;
 	border: none;
 	text-align: center;
 	text-decoration: none;
@@ -53,55 +55,70 @@ input{
 	background-color: white; 
 	
 }
-p{
-	width:60px;
+ul{
+	width:40%;
 	float: right;
 	height:40%;
 	background:rgb(103, 170, 249);
-	color:white;
+	color:black;
 	outline:none;
 	text-align: center;
 	cursor:pointer;
-	font-size:18px;
+	font-size:19px;
 }
-p{
+ul{
 	list-style:none;
 	width:500px;
 }
-p{
-	width:60%;
-	background:#fff;
+ul{
+	width:50%;
+	background:transparent;
 	height:40px;
 	line-height:40px;
 	padding:0 5px;
 	position:relative;
-	cursor:pointer;
 	display:block;
 	margin:5px 0;
-	box-shadow: -2px 4px 2px #200;
 	border-radius: 10px 10px 10px 10px;
 }
-p{
-	width:60%;
-	height:40px;
-	background:#fff;
-	line-height:40px;
 
-}
-p button{
+ul input button{
 	 position:absolute;
 	 top:0;
 	 right:0;
-	 width:70px;
+	 width:50px;
 	 text-align:center;
 	 background:rgb(103, 170, 249);
-	 font-size: 18px;
+	 font-size: 19px;
 	 font-style:italic;
 	 border-radius: 10px 10px 10px 10px;
 }
-p input{
-	width: 60%;
+ul input{
+	width: 50%;
 	height: 40%;
 	text-align: center;
-	font-size: 18px;
+	font-size: 19px;
 }
+ul{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+ul li.checked::before {
+	content: '';
+	position: absolute;
+	border-color: #fff;
+	border-style: solid;
+	border-width: 0 2px 2px 0;
+	top: 10px;
+	left: 16px;
+	transform: rotate(45deg);
+	height: 15px;
+	width: 7px;
+  }
+#checked{
+	text-decoration: line-through;
+	width: 10px;
+	height: 10px;
+  }
