@@ -1,42 +1,39 @@
-function add(){
+function add() {
+  let li = document.createElement("li");
+  let inp = document.getElementById("myInput").value;
+  let txt = document.createTextNode(inp);
+  //let Span = document.createElement('span');
+  //Span.appendChild(txt);
+  li.appendChild(txt);
+  if (inp === '') {
+    alert("You must input toDo!");
+  } else {
+    document.getElementById("ul").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
 
-    /*let textNode = document.getElementById('myInput');
-	let lista = document.getElementById('lista');
-    let item = document.createElement("li");
-    item.innerHTML = textNode.value;    
-    lista.appendChild(item);*/
-    
-    let x= document.getElementById('myInput');
-    let li=document.createElement('li');
-    let label=document.createElement('label');
-    let span=document.createElement('span');
-    let inp=document.createElement('checkbox');
-    
-    span.innerHTML=x.value;
-    let bullet= ul.appendChild(li);
-    bullet.appendChild(inp);
-    li.appendChild(span);
-    
-}
-function remove() {
-    let e=document.querySelector("li:last-child");
-    e.parentElement.removeChild(e);
-}
+let span = document.createElement('span');
+let nameS = document.createTextNode('Remove');
+span.className='remove';
+span.appendChild(nameS);
+li.appendChild(span);
 
 
-function strike(){
-    let list = document.getElementById('ul');      
-    let checkbox = document.createElement('input');
-    checkbox.type='checkbox';
-             
-    list.appendChild(checkbox);
 
+let remove = document.getElementsByClassName('remove');
 
-    for (let i;i<x.length;i++){
-        x[i].style.textDecoration = "line-through";
-        //x[i].style.textDecoration='line-through';
-    }
-    //x.strike;
+for(let i =0; i<remove.length;i++){
+  remove[i].onclick = function(){
+    let div=this.parentElement;
+    div.style.display='none';
+  }
 }
 
-  
+let checkbox = document.createElement('input');
+checkbox.type='checkbox';
+checkbox.className = 'check';
+li.appendChild(checkbox);
+
+
+}
+
