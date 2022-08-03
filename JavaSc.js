@@ -33,7 +33,5 @@ let checkbox = document.createElement('input');
 checkbox.type='checkbox';
 checkbox.className = 'check';
 li.appendChild(checkbox);
-
-
 }
 
