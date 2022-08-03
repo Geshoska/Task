@@ -76,7 +76,3 @@ li .check{
 	margin: 0px 15px 0px;
 	text-decoration:line-through;
 }
-
-ul li.checked{
-	text-decoration: line-through;
-}
