@@ -25,7 +25,7 @@ let remove = document.getElementsByClassName('remove');
 for(let i =0; i<remove.length;i++){
   remove[i].onclick = function(){
     let div=this.parentElement;
-    div.style.display='none';
+    div.remove();
   }
 }
 
