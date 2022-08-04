@@ -63,6 +63,7 @@ input{
 	top: 0;
 	padding: 8px 8px 8px 8px;
 	border-radius: 7px;
+
   }
 .remove:hover {
 	background: rgb(138, 189, 255);
@@ -74,5 +75,10 @@ li .check{
 	float: left;
 	position:relative;
 	margin: 0px 15px 0px;
-	text-decoration:line-through;
 }
+.check{
+	text-decoration: line-through;
+	color:gainsboro;
+	display: block;
+}
+
