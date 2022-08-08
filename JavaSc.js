@@ -1,3 +1,7 @@
+let array = [];
+
+
+
 function add() {
   let li = document.createElement("li");
   let inp = document.getElementById("myInput").value;
@@ -6,9 +10,18 @@ function add() {
   Span.id='Span';
   Span.appendChild(txt);
   li.appendChild(Span);
+  
+  let object = {
+    content:document.getElementById('myInput').value,
+    done:false
+  };
+  array.push(object);
+  localStorage.setItem('Array', JSON.stringify(array));
+  console.log(array);
+
   if (inp === '') {
     alert("You must input toDo!");
-    return;
+    return;   
   }
 
   let span = document.createElement('span');
@@ -23,16 +36,24 @@ function add() {
   checkbox.className = 'check';
   checkbox.addEventListener('change',strikeItem);
   li.appendChild(checkbox);
- 
 
   document.getElementById("ul").appendChild(li);
 }
 
 function rem(){
-  let remove = document.getElementsByClassName('remove');
-  let div=this.parentElement;
-  div.remove();
-}  
+  let myArray= [];
+  myArray = array;
+  for (let i=0;i<myArray.length;i++){
+      myArray.splice(i,1);
+      //alert('deleted ' + myArray[i]);
+      console.log(myArray);
+  }
+
+  let li=this.parentElement;
+  li.remove();
+  
+ 
+}
 
 function strikeItem() {
   let item = this.parentElement;
