@@ -1,8 +1,7 @@
-let array = [];
+let niza = [];
 
 
-
-function add() {
+function add(){
   let li = document.createElement("li");
   let inp = document.getElementById("myInput").value;
   let txt = document.createTextNode(inp);
@@ -15,9 +14,9 @@ function add() {
     content:document.getElementById('myInput').value,
     done:false
   };
-  array.push(object);
-  localStorage.setItem('Array', JSON.stringify(array));
-  console.log(array);
+  niza.push(object);
+  localStorage.setItem('Array', JSON.stringify(niza));
+  console.log(niza);
 
   if (inp === '') {
     alert("You must input toDo!");
@@ -41,18 +40,15 @@ function add() {
 }
 
 function rem(){
-  let myArray= [];
-  myArray = array;
-  for (let i=0;i<myArray.length;i++){
-      myArray.splice(i,1);
-      //alert('deleted ' + myArray[i]);
-      console.log(myArray);
-  }
-
+  let novaNiza= [];
+  novaNiza = niza;
   let li=this.parentElement;
-  li.remove();
-  
- 
+  for (let i=0; i<novaNiza.length;i++) {
+    if(li.firstChild.innerText === ){
+    novaNiza.splice(i,1);
+   }
+   li.remove();
+  } 
 }
 
 function strikeItem() {
