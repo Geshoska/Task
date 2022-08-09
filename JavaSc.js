@@ -40,16 +40,15 @@ function add(){
 }
 
 function rem(){
-  let novaNiza= [];
-  novaNiza = niza;
   let li=this.parentElement;
-  for (let i=0; i<novaNiza.length;i++) {
-    if(li.firstChild.innerText === ){
-    novaNiza.splice(i,1);
-   }
-   li.remove();
-  } 
+  for (let i=0; i<niza.length;i++) {
+    if(li.firstChild.innerText === niza[i].content){
+      niza.splice(i,1);
+      li.remove();     
+    }
+  }
 }
+
 
 function strikeItem() {
   let item = this.parentElement;
