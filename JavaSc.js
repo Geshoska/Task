@@ -49,28 +49,18 @@ function rem(){
     }
   } 
 }
-function strike(event) {
-  let checkBox = [];
-  let listLi= [];
-  let checkboxes = document.getElementsByClassName('check');
-  let li = document.getElementById('li');
-    for(let i=0 ;i<niza.length;i++){
-      listLi.push(niza[i].content);
-      checkboxes[i].checked;
-      checkBox.push(checkboxes[i].checked);
-        
-      if(niza[i].content === checkBox[i].checked){
-      niza[i].done = true;
-    } 
-  } 
- /*
-  if(checkBox[i].checked && listLi[i]){
-    //niza[i].done = true;
-    document.getElementById('li').classList.add('check');
+
+function strike (){
+  let item = this.parentElement;
+  let checkbox = document.getElementsByClassName('check');
+  for (let i=0;i<niza.length;i++){
+  if(checkbox[i].checked && niza[i].content){
+    item.classList.add('check');
+    niza[i].done=true;
   }
-  if(checkboxes[i].checked === false){
-    niza[i].done=false;
-    document.getElementById('li').classList.remove('check');
-  }*/
-    
+  else{
+  item.classList.remove('check'); 
+  niza[i].done=false;
+  }
+  }  
 }
