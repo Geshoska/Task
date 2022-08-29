@@ -76,7 +76,7 @@ li .check{
 	position:relative;
 	margin: 0px 15px 0px;
 }
-.check{
+.Checked{
 	text-decoration: line-through;
 	color:gainsboro;
 	display: block;
