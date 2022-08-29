@@ -16,8 +16,7 @@ function add() {
     done: false,
   };
   niza.push(object);
-  localStorage.setItem("Array", JSON.stringify(niza));
-  console.log(niza);
+  writeLocal();
 
   if (inp === "") {
     alert("You must input toDo!");
@@ -41,28 +40,34 @@ function add() {
 }
 
 function rem() {
-  let li = this.parentElement;
-  for (let i = 0; i < niza.length; i++) {
-    if (li.firstChild.innerText === niza[i].content) {
-      li.remove();
-      niza.splice(i, 1);
-    }
+  let checkbox = this;
+  let li = checkbox.parentElement;
+  let ref = niza.find((el) => el.element === li);
+  let index = niza.indexOf(ref);
+  if (ref !== undefined && ref.done) {
+    li.remove();
+    niza.splice(index, 1);
+    console.log(niza);
   }
+  writeLocal();
 }
 
 function strike() {
   let checkbox = this;
   let item = checkbox.parentElement;
-  for (let i = 0; i < niza.length; i++) {
-    let ref = niza.find((el) => el.element === item);
-    if (ref !== undefined) {
-      if (checkbox.checked && niza[i].content) {
-        item.classList.add("check");
-        ref.done = true;
-      } else {
-        item.classList.remove("check");
-        ref.done = false;
-      }
+  let ref = niza.find((el) => el.element === item);
+  if (ref !== undefined) {
+    if (checkbox.checked) {
+      item.classList.add("Checked");
+      ref.done = true;
+    } else {
+      item.classList.remove("Checked");
+      ref.done = false;
     }
   }
+  writeLocal();
+}
+
+function writeLocal() {
+  localStorage.setItem("AppState", JSON.stringify(niza));
 }
