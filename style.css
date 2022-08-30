@@ -66,7 +66,7 @@ input{
 
   }
 .remove:hover {
-	background: rgb(138, 189, 255);
+	background: rgba(255, 9, 9, 0.918);
 }
 li .check{
 	width: 20px;
