@@ -44,7 +44,7 @@ function rem() {
   let li = checkbox.parentElement;
   let ref = niza.find((el) => el.element === li);
   let index = niza.indexOf(ref);
-  if (ref !== undefined && ref.done) {
+  if (ref !== undefined) {
     li.remove();
     niza.splice(index, 1);
     console.log(niza);
