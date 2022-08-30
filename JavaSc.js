@@ -17,6 +17,7 @@ function add() {
   };
   niza.push(object);
   writeLocal();
+  myLoad();
 
   if (inp === "") {
     alert("You must input toDo!");
@@ -50,6 +51,7 @@ function rem() {
     console.log(niza);
   }
   writeLocal();
+  myLoad();
 }
 
 function strike() {
@@ -66,8 +68,17 @@ function strike() {
     }
   }
   writeLocal();
+  myLoad();
+  
 }
 
 function writeLocal() {
   localStorage.setItem("AppState", JSON.stringify(niza));
+}
+
+function myLoad() {
+//let items = 
+ document.getElementById('div1').innerHTML = JSON.stringify(localStorage.getItem('AppState'));
+ //JSON.stringify(JSON.parse(items));
+
 }

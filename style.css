@@ -30,8 +30,8 @@ li{
 	user-select: none;
 }
 
-input{
-	width:370px;
+input {
+	width:450px;
 	height:40px;
 	border: none;	
 	padding:0 5px;
@@ -40,7 +40,7 @@ input{
 	text-align: center;
 }
 
-#style{
+#style {
 	max-width: 950px;
 	background:#ffff;
 	border-radius: 7px;
@@ -82,3 +82,12 @@ li .check{
 	display: block;
 }
 
+#div1{
+	text-align: center;
+	width: 400px;
+	height: auto;
+	position: relative;
+	border-radius: 7px;
+	margin-top: 10px;
+	background-color: white;
+}
