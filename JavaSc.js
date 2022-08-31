@@ -17,6 +17,7 @@ function add() {
   };
   niza.push(object);
   writeLocal();
+  myLoad();
 
   if (inp === "") {
     alert("You must input toDo!");
@@ -85,6 +86,18 @@ function myLoad() {
       let inp = itemsConverted[i].content;
       let txt = document.createTextNode(inp);
       li.appendChild(txt);
-      document.getElementById("div1").appendChild(li);
-    }
+  
+  let span = document.createElement("span");
+  let nameS = document.createTextNode("Remove");
+  span.className = "remove";
+  span.addEventListener("click", rem);
+  span.appendChild(nameS);
+  li.appendChild(span);
+
+  let checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.className = "check";
+  li.appendChild(checkbox);
+  document.getElementById("div1").appendChild(li);
+  }
 }
