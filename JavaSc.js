@@ -77,8 +77,11 @@ function writeLocal() {
 }
 
 function myLoad() {
-//let items = 
- document.getElementById('div1').innerHTML = JSON.stringify(localStorage.getItem('AppState'));
- //JSON.stringify(JSON.parse(items));
+let items = localStorage.getItem('AppState');
+
+if(localStorage.length == 0){
+  document.getElementById('div1').style.display = 'none';
+}else
+    document.getElementById('div1').innerHTML = JSON.stringify(items);
 
 }
