@@ -1,34 +1,18 @@
 let niza = [];
+const inp = document.getElementById("myInput");
 
-function add() {
+function createTodo(content, done) {
   let li = document.createElement("li");
   li.id = "li";
-  let inp = document.getElementById("myInput").value;
-  let txt = document.createTextNode(inp);
   let Span = document.createElement("span");
+  Span.textContent = content;
   Span.id = "Span";
-  Span.appendChild(txt);
   li.appendChild(Span);
 
-  let object = {
-    element: li,
-    content: document.getElementById("myInput").value,
-    done: false,
-  };
-  niza.push(object);
-  writeLocal();
-  myLoad();
-
-  if (inp === "") {
-    alert("You must input toDo!");
-    return;
-  }
-
   let span = document.createElement("span");
-  let nameS = document.createTextNode("Remove");
+  span.textContent = "Remove";
   span.className = "remove";
   span.addEventListener("click", rem);
-  span.appendChild(nameS);
   li.appendChild(span);
 
   let checkbox = document.createElement("input");
@@ -37,7 +21,23 @@ function add() {
   checkbox.addEventListener("click", strike);
   li.appendChild(checkbox);
 
-  document.getElementById("ul").appendChild(li);
+  if(done){
+    li.classList.add("Checked");
+  }
+  return { element: li, content: content, done: done };
+
+}
+
+function add() {
+  if (inp.value === "") {
+    alert("You must input toDo!");
+    return;
+  }
+  const element = createTodo(inp.value, false);
+
+  niza.push(element);
+  writeLocal();
+  myLoad();
 }
 
 function rem() {
@@ -71,33 +71,28 @@ function strike() {
 }
 
 function writeLocal() {
-  localStorage.setItem("AppState", JSON.stringify(niza));
+  localStorage.setItem(
+    "AppState",
+    JSON.stringify(
+      niza.map((item) => ({ content: item.content, done: item.done }))
+    )
+  );
 }
 
 function myLoad() {
+  const container = document.querySelector("#ul");
+  container.childNodes.forEach((child) => child.remove()); // empty the container
   let items = localStorage.getItem("AppState");
-  let itemsConverted = JSON.parse(items);
+  niza = [];
+  const itemsFromLocalStorage = JSON.parse(items);
 
-  if (localStorage.length == 0) {
-    document.getElementById("div1").style.display = "none";
-  } else
-    for (let i = 0; i < itemsConverted.length; i++) {
-      li = document.createElement("li");
-      let inp = itemsConverted[i].content;
-      let txt = document.createTextNode(inp);
-      li.appendChild(txt);
-  
-  let span = document.createElement("span");
-  let nameS = document.createTextNode("Remove");
-  span.className = "remove";
-  span.addEventListener("click", rem);
-  span.appendChild(nameS);
-  li.appendChild(span);
-
-  let checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.className = "check";
-  li.appendChild(checkbox);
-  document.getElementById("div1").appendChild(li);
+  for (let i = 0; i < itemsFromLocalStorage.length; i++) {
+    const element = createTodo(
+      itemsFromLocalStorage[i].content,
+      itemsFromLocalStorage[i].done
+    );
+    niza.push(element);
+    container.appendChild(element.element);
   }
 }
+document.addEventListener('DOMContentLoaded',myLoad);
