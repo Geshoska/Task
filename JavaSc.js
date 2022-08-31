@@ -17,7 +17,6 @@ function add() {
   };
   niza.push(object);
   writeLocal();
-  myLoad();
 
   if (inp === "") {
     alert("You must input toDo!");
@@ -68,8 +67,6 @@ function strike() {
     }
   }
   writeLocal();
-  myLoad();
-  
 }
 
 function writeLocal() {
@@ -77,11 +74,17 @@ function writeLocal() {
 }
 
 function myLoad() {
-let items = localStorage.getItem('AppState');
+  let items = localStorage.getItem("AppState");
+  let itemsConverted = JSON.parse(items);
 
-if(localStorage.length == 0){
-  document.getElementById('div1').style.display = 'none';
-}else
-    document.getElementById('div1').innerHTML = JSON.stringify(items);
-
+  if (localStorage.length == 0) {
+    document.getElementById("div1").style.display = "none";
+  } else
+    for (let i = 0; i < itemsConverted.length; i++) {
+      li = document.createElement("li");
+      let inp = itemsConverted[i].content;
+      let txt = document.createTextNode(inp);
+      li.appendChild(txt);
+      document.getElementById("div1").appendChild(li);
+    }
 }
