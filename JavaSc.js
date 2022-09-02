@@ -81,7 +81,7 @@ function writeLocal() {
 
 function myLoad() {
   const container = document.querySelector("#ul");
-  const newDiv = document.querySelector("#div1");
+  const newDiv = document.querySelector("#ul1");
 
   for (let i = container.childNodes.length - 1; i >= 0; i--) {
     container.removeChild(container.childNodes[i]);
