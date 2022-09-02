@@ -82,7 +82,11 @@ function writeLocal() {
 function myLoad() {
   const container = document.querySelector("#ul");
   const newDiv = document.querySelector('#div1');
-  container.childNodes.forEach((child) => child.remove()); // empty the container
+
+  for (let i = container.childNodes.length-1; i >= 0; i--) {
+    container.removeChild(container.childNodes[i]);
+ }
+
   if (localStorage.length !== 0) {
     let items = localStorage.getItem("AppState");
     const itemsFromLocalStorage = JSON.parse(items);
@@ -93,14 +97,12 @@ function myLoad() {
         itemsFromLocalStorage[i].content,
         itemsFromLocalStorage[i].done
       );
+      container.appendChild(element.element);
+      niza.push(element);
+  
       if(element.done){
       newDiv.appendChild(element.element);
-      newDiv.classList.add('#div1-fadeIn');
       }
-      else
-      container.appendChild(element.element);
-      container.classList.add('#div1-fadeIn');
-      niza.push(element);
     }
   }
 }

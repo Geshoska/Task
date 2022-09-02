@@ -115,5 +115,21 @@ li .check {
 .material-symbols-outlined {
   margin-left: auto;
   margin-top: auto;
-  font-size: 58px;
+  
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;  /* Preferred icon size */
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+  
+}
+
+.material-symbols-outlined:hover{
+	color: aliceblue ;
 }
