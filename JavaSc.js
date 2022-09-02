@@ -81,11 +81,14 @@ function writeLocal() {
 
 function myLoad() {
   const container = document.querySelector("#ul");
-  const newDiv = document.querySelector('#div1');
+  const newDiv = document.querySelector("#div1");
 
-  for (let i = container.childNodes.length-1; i >= 0; i--) {
+  for (let i = container.childNodes.length - 1; i >= 0; i--) {
     container.removeChild(container.childNodes[i]);
- }
+  }
+  for (let i = newDiv.childNodes.length - 1; i >= 0; i--) {
+    newDiv.removeChild(newDiv.childNodes[i]);
+  }
 
   if (localStorage.length !== 0) {
     let items = localStorage.getItem("AppState");
@@ -99,9 +102,9 @@ function myLoad() {
       );
       container.appendChild(element.element);
       niza.push(element);
-  
-      if(element.done){
-      newDiv.appendChild(element.element);
+
+      if (element.done) {
+        newDiv.appendChild(element.element);
       }
     }
   }
