@@ -1,88 +1,93 @@
-*{
-	font-family: 'EB Garamond', serif;
-	margin:0;
-	padding:0;
-	box-sizing:border-box;
+* {
+  font-family: "EB Garamond", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-h1{
-	color:black;
-	margin-top:100px;
-	text-align: center;
+h1 {
+  color: black;
+  margin-top: 100px;
+  text-align: center;
 }
-body{
-	min-height:100vh;
-	background:linear-gradient(65deg,rgb(255, 229, 217),rgb(255, 202,212),rgb(244, 172, 183));
-	display:flex;
-	flex-direction:column;
-	align-items:center;
+body {
+  min-height: 100vh;
+  background: linear-gradient(
+    65deg,
+    rgb(255, 229, 217),
+    rgb(255, 202, 212),
+    rgb(244, 172, 183)
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-li{
-	list-style: none;
-	font-size: 19px;
-	margin-left: 10px;
-	padding: 8px;
-	position: relative;
+li {
+  list-style: none;
+  font-size: 19px;
+  margin-left: 10px;
+  padding: 8px;
+  position: relative;
 
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 input {
-	width:450px;
-	height:40px;
-	border: none;	
-	padding:0 5px;
-	font-size: 19px;
-	background-color: white; 
-	text-align: center;
+  width: 450px;
+  height: 40px;
+  border: none;
+  padding: 0 5px;
+  font-size: 19px;
+  background-color: white;
+  text-align: center;
 }
 
 #style {
-	max-width: 950px;
-	background:#ffff;
-	border-radius: 7px;
-	box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  max-width: 950px;
+  background: #ffff;
+  border-radius: 7px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
-#new{
-	font-size: 18px;
-	font-weight: bold;
-	padding: 10px 10px 10px 10px;
+#new {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 10px 10px 10px;
 }
-#new:hover{
- 	border-radius: 7px;
-	background: rgb(138, 189, 255);
-	padding: 10px 10px 10px 10px;
-
+#new:hover {
+  border-radius: 7px;
+  background: rgb(138, 189, 255);
+  padding: 10px 10px 10px 10px;
 }
 .remove {
-	position: absolute;
-	right: 0;
-	top: 0;
-	padding: 8px 8px 8px 8px;
-	border-radius: 7px;
-
-  }
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 8px 8px 8px 8px;
+  border-radius: 7px;
+}
 .remove:hover {
-	background: rgba(255, 9, 9, 0.918);
-}
-li .check{
-	width: 20px;
-	height: 20px;
-	white-space: normal;
-	float: left;
-	position:relative;
-	margin: 0px 15px 0px;
-}
-.Checked{
-	text-decoration: line-through;
-	color:gainsboro;
-	display: block;
+  background: rgba(255, 9, 9, 0.918);
 }
 
-#div1{
+li .check {
+  width: 23px;
+  height: 23px;
+  white-space: normal;
+  float: left;
+  position: relative;
+  margin: 0px 15px 0px;
+  
+}
+.Checked {
+  text-decoration: line-through;
+  color: gainsboro;
+  display: block;
+}
+
+#div1 {
 	text-align: center;
 	width: 450px;
 	height: auto;
@@ -90,4 +95,25 @@ li .check{
 	border-radius: 7px;
 	margin-top: 10px;
 	background-color: white;
+	transition: 12s;
+}
+
+#btn1 {
+  width: 60px;
+  height: 30px;
+  font-size: large;
+}
+#newD {
+  width: 60px;
+  height: 30px;
+  font-size: large;
+}
+#btn1:hover {
+  background-color: #ddd;
+  transition: 0ms;
+}
+.material-symbols-outlined {
+  margin-left: auto;
+  margin-top: auto;
+  font-size: 58px;
 }

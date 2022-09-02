@@ -21,11 +21,11 @@ function createTodo(content, done) {
   checkbox.addEventListener("click", strike);
   li.appendChild(checkbox);
 
-  if(done){
+  if (done) {
     li.classList.add("Checked");
   }
-  return { element: li, content: content, done: done };
 
+  return { element: li, content: content, done: done };
 }
 
 function add() {
@@ -81,18 +81,36 @@ function writeLocal() {
 
 function myLoad() {
   const container = document.querySelector("#ul");
+  const newDiv = document.querySelector('#div1');
   container.childNodes.forEach((child) => child.remove()); // empty the container
-  let items = localStorage.getItem("AppState");
-  niza = [];
-  const itemsFromLocalStorage = JSON.parse(items);
+  if (localStorage.length !== 0) {
+    let items = localStorage.getItem("AppState");
+    const itemsFromLocalStorage = JSON.parse(items);
+    niza = [];
 
-  for (let i = 0; i < itemsFromLocalStorage.length; i++) {
-    const element = createTodo(
-      itemsFromLocalStorage[i].content,
-      itemsFromLocalStorage[i].done
-    );
-    niza.push(element);
-    container.appendChild(element.element);
+    for (let i = 0; i < itemsFromLocalStorage.length; i++) {
+      const element = createTodo(
+        itemsFromLocalStorage[i].content,
+        itemsFromLocalStorage[i].done
+      );
+      if(element.done){
+      newDiv.appendChild(element.element);
+      newDiv.classList.add('#div1-fadeIn');
+      }
+      else
+      container.appendChild(element.element);
+      container.classList.add('#div1-fadeIn');
+      niza.push(element);
+    }
   }
 }
-document.addEventListener('DOMContentLoaded',myLoad);
+document.addEventListener("DOMContentLoaded", myLoad);
+
+function refresh() {
+  window.location.reload();
+}
+
+function clearAll() {
+  if (localStorage.length > 0) localStorage.clear();
+  window.location.reload();
+}
