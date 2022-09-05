@@ -34,10 +34,14 @@ function add() {
     return;
   }
   const element = createTodo(inp.value, false);
-
+  const container = document.querySelector("#ul");
+  const newDiv = document.querySelector("#ul1");
+  container.appendChild(element.element);
   niza.push(element);
+  if (element.done) {
+    newDiv.appendChild(element.element);
+  }
   writeLocal();
-  myLoad();
 }
 
 function rem() {
@@ -51,7 +55,6 @@ function rem() {
     console.log(niza);
   }
   writeLocal();
-  myLoad();
 }
 
 function strike() {
@@ -82,13 +85,6 @@ function writeLocal() {
 function myLoad() {
   const container = document.querySelector("#ul");
   const newDiv = document.querySelector("#ul1");
-
-  for (let i = container.childNodes.length - 1; i >= 0; i--) {
-    container.removeChild(container.childNodes[i]);
-  }
-  for (let i = newDiv.childNodes.length - 1; i >= 0; i--) {
-    newDiv.removeChild(newDiv.childNodes[i]);
-  }
 
   if (localStorage.length !== 0) {
     let items = localStorage.getItem("AppState");
