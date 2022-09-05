@@ -43,6 +43,7 @@ input {
   font-size: 19px;
   background-color: white;
   text-align: center;
+  border-radius: 7px;
 }
 
 #style {
@@ -87,47 +88,89 @@ li .check {
   display: block;
 }
 
-#div1 {
-	text-align: center;
-	width: 450px;
-	height: auto;
+#ul1 {
+	width: 500px;
+	height: 50%;
+	white-space: normal;
 	position: relative;
+	margin: 0px 15px 0px;	
 	border-radius: 7px;
+	text-align: left;
 	margin-top: 10px;
 	background-color: white;
 	transition: 12s;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	
+	font-size: 18px;
 }
 
-#btn1 {
-  width: 60px;
-  height: 30px;
+.btn1 {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "EB Garamond", serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 15px 15px;
+  border-radius: 7px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
   font-size: large;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
 }
-#newD {
-  width: 60px;
-  height: 30px;
-  font-size: large;
+
+.btn1:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #EBEBEB;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: 7px;
+  left: 0;
+  
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
 }
-#btn1:hover {
-  background-color: #ddd;
-  transition: 0ms;
+
+.btn1:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
 }
+
+.btn1:after {
+  background-color: #FFFFFF;
+}
+
+.btn1 span {
+  z-index: 1;
+  position: relative;
+  
+}
+
+
 .material-symbols-outlined {
   margin-left: auto;
   margin-top: auto;
-  
-	font-family: 'Material Icons';
-	font-weight: normal;
-	font-style: normal;
-	font-size: 24px;  /* Preferred icon size */
-	display: inline-block;
-	line-height: 1;
-	text-transform: none;
-	letter-spacing: normal;
-	word-wrap: normal;
-	white-space: nowrap;
-	direction: ltr;
-  
 }
 
 .material-symbols-outlined:hover{
